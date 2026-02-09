@@ -572,6 +572,18 @@ h1 {
   gap: 1.5rem;
 }
 
+.collection-grid,
+.product-grid,
+.specials-grid,
+.highlight-grid,
+.cta-grid,
+.product-layout,
+.checkout-grid,
+.category-grid {
+  width: min(var(--max-width), 92%);
+  margin: 0 auto;
+}
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
