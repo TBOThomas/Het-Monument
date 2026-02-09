@@ -421,6 +421,35 @@ h1 {
   border-bottom: 1px solid var(--border);
 }
 
+.brand-strip {
+  padding: 3rem 0;
+}
+
+.brand-inner {
+  display: grid;
+  gap: 2rem;
+}
+
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.brand-grid img {
+  width: 100%;
+  max-height: 48px;
+  object-fit: contain;
+  filter: grayscale(1) brightness(0.9);
+  opacity: 0.8;
+}
+
+.brand-grid img:hover {
+  opacity: 1;
+  filter: grayscale(0) brightness(1);
+}
+
 .value-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -638,6 +667,49 @@ h1 {
   font-weight: 600;
 }
 
+.koopzondag-section {
+  background: #14110f;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.koopzondag-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.koopzondag-list {
+  margin: 1.5rem 0;
+  padding-left: 1.2rem;
+  color: var(--text-muted);
+}
+
+.koopzondag-card {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  background: var(--bg-elev);
+}
+
+.koopzondag-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.koopzondag-card-body {
+  padding: 1.5rem;
+}
+
+.koopzondag-actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
 .split-section {
   background: #13110f;
   border-top: 1px solid var(--border);
@@ -831,7 +903,8 @@ details p {
   .hero-grid,
   .material-grid,
   .cta-grid,
-  .split-grid {
+  .split-grid,
+  .koopzondag-grid {
     grid-template-columns: 1fr;
   }
 
@@ -841,6 +914,10 @@ details p {
   .product-grid,
   .review-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .brand-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .footer-grid {
@@ -895,6 +972,10 @@ details p {
   .footer-grid,
   .split-grid {
     grid-template-columns: 1fr;
+  }
+
+  .brand-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .hero-actions {
