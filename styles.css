@@ -11,7 +11,7 @@
   --border: #2a2520;
   --shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
   --radius: 18px;
-  --max-width: 1200px;
+  --max-width: 1280px;
 }
 
 * {
@@ -568,13 +568,13 @@ h1 {
 .collection-grid,
 .review-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
 }
 
@@ -632,11 +632,33 @@ h1 {
 .product-card p {
   color: var(--text-muted);
 }
-}
 
 .text-link {
   color: var(--accent);
   font-weight: 600;
+}
+
+.specials-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.special-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elev);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.special-card p {
+  margin: 0.4rem 0 0;
+  color: var(--text-muted);
 }
 
 .highlight-section {
@@ -648,6 +670,10 @@ h1 {
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: center;
+}
+
+.highlight-content p {
+  color: var(--text-muted);
 }
 
 .highlight-media {
@@ -941,6 +967,11 @@ h1 {
   color: var(--text-muted);
 }
 
+.cta-note {
+  margin-top: 1rem;
+  color: var(--text-muted);
+}
+
 .cta-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -953,6 +984,257 @@ h1 {
   height: 90px;
   border-radius: 10px;
   object-fit: cover;
+}
+
+.page-hero {
+  padding: 3rem 0 2rem;
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.breadcrumb a {
+  color: var(--text);
+}
+
+.category-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0 0;
+}
+
+.filter-pill {
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.pagination {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.pagination a {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.4rem 0.8rem;
+  color: var(--text-muted);
+}
+
+.pagination a.is-active {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.product-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.product-gallery {
+  display: grid;
+  gap: 1rem;
+}
+
+.product-main-image {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #14110f;
+}
+
+.product-main-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.product-thumbs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+
+.product-thumb {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #14110f;
+}
+
+.product-thumb img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.product-info {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+  padding: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.product-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.price-block {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.price-old {
+  font-size: 1rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.variant-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+
+.variant-pill {
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text);
+  background: var(--bg-soft);
+}
+
+.quantity-row {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.quantity-input {
+  width: 80px;
+  padding: 0.4rem 0.6rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  color: var(--text);
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--text-muted);
+  display: grid;
+  gap: 0.4rem;
+}
+
+.info-list li::before {
+  content: "*";
+  color: var(--accent);
+  margin-right: 0.6rem;
+}
+
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.checkout-card {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+  padding: 2rem;
+  display: grid;
+  gap: 1.2rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  color: var(--text);
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-muted);
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.payment-options {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.payment-option {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.8rem;
+  background: var(--bg-soft);
 }
 
 .faq-grid {
@@ -1046,7 +1328,9 @@ details p {
   .cta-grid,
   .split-grid,
   .koopzondag-grid,
-  .highlight-grid {
+  .highlight-grid,
+  .product-layout,
+  .checkout-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1061,6 +1345,10 @@ details p {
 
   .brand-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .specials-grid {
+    grid-template-columns: 1fr;
   }
 
   .footer-grid {
@@ -1138,6 +1426,10 @@ details p {
   }
 
   .cta-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .input-row {
     grid-template-columns: 1fr;
   }
 }
