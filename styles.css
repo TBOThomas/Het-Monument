@@ -528,6 +528,74 @@ h1 {
   gap: 2rem;
 }
 
+.brand-section {
+  padding: 2.5rem 0;
+}
+
+.brand-slider {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.brand-track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 0.6rem 0;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.brand-track::-webkit-scrollbar {
+  display: none;
+}
+
+.brand-item {
+  flex: 0 0 180px;
+  height: 72px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-elev);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+}
+
+.brand-item img {
+  max-height: 40px;
+  max-width: 100%;
+  object-fit: contain;
+  filter: grayscale(1) brightness(0.9);
+  opacity: 0.85;
+}
+
+.brand-item:hover img {
+  filter: none;
+  opacity: 1;
+}
+
+.slider-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.slider-btn:hover {
+  border-color: var(--accent);
+}
+
 .brand-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
