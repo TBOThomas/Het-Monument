@@ -446,6 +446,12 @@ h1 {
   display: block;
 }
 
+.hero-slide-actions {
+  position: absolute;
+  left: 1.2rem;
+  bottom: 1.2rem;
+}
+
 .hero-slider .slider-btn {
   position: absolute;
   top: 50%;
