@@ -271,6 +271,27 @@ h1 {
   margin: 2rem 0;
 }
 
+.hero-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  display: grid;
+  gap: 0.6rem;
+  color: var(--text-muted);
+}
+
+.hero-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.hero-list li::before {
+  content: "*";
+  color: var(--accent);
+  font-weight: 700;
+}
+
 .hero-tip {
   margin: 0 0 1.5rem;
   color: var(--text-muted);
@@ -327,6 +348,40 @@ h1 {
   padding: 2rem;
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
+}
+
+.hero-media {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.hero-image {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #14110f;
+  min-height: 280px;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(231, 113, 27, 0.2);
+  border: 1px solid rgba(231, 113, 27, 0.6);
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.8rem;
 }
 
 .hero-card-header {
@@ -584,6 +639,52 @@ h1 {
   font-weight: 600;
 }
 
+.highlight-section {
+  padding-top: 2rem;
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.highlight-media {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #14110f;
+}
+
+.highlight-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  display: grid;
+  gap: 0.6rem;
+  color: var(--text-muted);
+}
+
+.feature-list li::before {
+  content: "*";
+  color: var(--accent);
+  margin-right: 0.6rem;
+}
+
+.highlight-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
 .material-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -665,6 +766,46 @@ h1 {
 .review-author {
   margin-top: 1rem;
   font-weight: 600;
+}
+
+.room-section {
+  padding-top: 2rem;
+}
+
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.room-card {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+  padding: 1.8rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.room-card p {
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.room-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--text-muted);
+  display: grid;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.room-card ul li::before {
+  content: "*";
+  color: var(--accent);
+  margin-right: 0.6rem;
 }
 
 .koopzondag-section {
@@ -904,7 +1045,8 @@ details p {
   .material-grid,
   .cta-grid,
   .split-grid,
-  .koopzondag-grid {
+  .koopzondag-grid,
+  .highlight-grid {
     grid-template-columns: 1fr;
   }
 
@@ -912,7 +1054,8 @@ details p {
   .steps-grid,
   .collection-grid,
   .product-grid,
-  .review-grid {
+  .review-grid,
+  .room-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -970,7 +1113,8 @@ details p {
   .product-grid,
   .review-grid,
   .footer-grid,
-  .split-grid {
+  .split-grid,
+  .room-grid {
     grid-template-columns: 1fr;
   }
 
