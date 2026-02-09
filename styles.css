@@ -277,7 +277,7 @@ button {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 3rem;
-  align-items: center;
+  align-items: stretch;
 }
 
 .eyebrow {
@@ -396,6 +396,7 @@ h1 {
 .hero-media {
   display: grid;
   gap: 1.5rem;
+  align-items: stretch;
 }
 
 .hero-image {
@@ -405,6 +406,60 @@ h1 {
   border: 1px solid var(--border);
   background: #14110f;
   min-height: 280px;
+}
+
+.hero-slider {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #14110f;
+  min-height: 360px;
+  height: 100%;
+}
+
+.hero-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  height: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hero-track::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+  scroll-snap-align: start;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-slider .slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: rgba(15, 14, 12, 0.85);
+}
+
+.hero-slider [data-hero-prev] {
+  left: 1rem;
+}
+
+.hero-slider [data-hero-next] {
+  right: 1rem;
 }
 
 .hero-image img {

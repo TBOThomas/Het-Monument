@@ -84,3 +84,66 @@ if (brandSlider) {
 
   startAuto();
 }
+
+const heroSlider = document.querySelector("[data-hero-slider]");
+
+if (heroSlider) {
+  const track = heroSlider.querySelector("[data-hero-track]");
+  const prevButton = heroSlider.querySelector("[data-hero-prev]");
+  const nextButton = heroSlider.querySelector("[data-hero-next]");
+  let autoTimer = null;
+
+  const getScrollAmount = () => track.clientWidth;
+
+  const scrollNext = () => {
+    const amount = getScrollAmount();
+    const maxScroll = track.scrollWidth - track.clientWidth - 1;
+    if (track.scrollLeft >= maxScroll) {
+      track.scrollTo({ left: 0, behavior: "smooth" });
+      return;
+    }
+    track.scrollBy({ left: amount, behavior: "smooth" });
+  };
+
+  const scrollPrev = () => {
+    const amount = getScrollAmount();
+    if (track.scrollLeft <= 0) {
+      track.scrollTo({ left: track.scrollWidth, behavior: "smooth" });
+      return;
+    }
+    track.scrollBy({ left: -amount, behavior: "smooth" });
+  };
+
+  const stopAuto = () => {
+    if (autoTimer) {
+      clearInterval(autoTimer);
+      autoTimer = null;
+    }
+  };
+
+  const startAuto = () => {
+    stopAuto();
+    autoTimer = setInterval(scrollNext, 4500);
+  };
+
+  if (prevButton) {
+    prevButton.addEventListener("click", () => {
+      stopAuto();
+      scrollPrev();
+      startAuto();
+    });
+  }
+
+  if (nextButton) {
+    nextButton.addEventListener("click", () => {
+      stopAuto();
+      scrollNext();
+      startAuto();
+    });
+  }
+
+  track.addEventListener("pointerenter", stopAuto);
+  track.addEventListener("pointerleave", startAuto);
+
+  startAuto();
+}
