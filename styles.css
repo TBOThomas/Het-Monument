@@ -101,11 +101,28 @@ button {
 }
 
 .header-inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "logo actions"
+    "nav nav";
   align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  padding: 1.2rem 0;
+  gap: 0.8rem 1.5rem;
+  padding: 1.1rem 0 0.8rem;
+  position: relative;
+}
+
+.header-inner .logo {
+  grid-area: logo;
+}
+
+.header-inner .header-actions {
+  grid-area: actions;
+  justify-self: end;
+}
+
+.header-inner .nav {
+  grid-area: nav;
 }
 
 .logo {
@@ -121,10 +138,13 @@ button {
 .nav {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 1.2rem;
   font-weight: 500;
   color: var(--text-muted);
+  white-space: nowrap;
+  overflow-x: auto;
+  padding-bottom: 0.2rem;
 }
 
 .nav a:hover {
