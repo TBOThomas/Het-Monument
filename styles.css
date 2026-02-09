@@ -750,6 +750,24 @@ h1 {
   gap: 1.5rem;
 }
 
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.why-card {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+  padding: 1.8rem;
+}
+
+.why-card p {
+  color: var(--text-muted);
+  margin: 0;
+}
+
 .collection-card,
 .product-card,
 .review-card {
